@@ -11,8 +11,11 @@ const Heading = ({ heading, message, buttonText }) => {
       <div className="text-white z-[2] p-5 ml-[-0.5rem] mt-[-0.5rem] col-span-2 self-center">
         <span className="text-xxl font-bold col-span-2">{heading}</span>
       </div>
-      <Authorize message={message} buttonText={buttonText} />
-      <div className="max-h-1 border shadow-sm shadow-slate-400 col-span-4 mt-[-0.5rem]  "></div>
+      <div className="col-span-2 pl-24 ">
+        <Authorize message={message} />
+      </div>
+
+      <div className="ml-3 max-h-1 border shadow-sm shadow-slate-400 col-span-4 mt-[-0.5rem] mr-5 "></div>
 
       {/* <div className="bg-purple-500 border row-span-2 col-span-2 mt-[-12.0rem] z-[2]">Table data</div>
       <div className="bg-slate-500 border row-span-2 col-span-2 mt-[-12rem]">Graph Data</div> */}
