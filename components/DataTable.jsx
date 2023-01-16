@@ -21,7 +21,7 @@ const DataTable = ({ data }) => {
             <thead className="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
               <tr>
                 {take_columns.map((column) => (
-                  <th scope="col" className="px-6 py-3">
+                  <th key={column} scope="col" className="px-6 py-3">
                     {column}
                   </th>
                 ))}
@@ -33,7 +33,7 @@ const DataTable = ({ data }) => {
                 <tr key={key} className='bg-white border-b dark:bg-gray-800 dark:border-gray-700 hover:bg-gray-50 dark:hover:bg-gray-600'>
                   {console.log('key', `${key}`, 'value', `${JSON.parse(JSON.stringify(value))}` )}
                   {take_columns.map((column) => (
-                    <td className="px-6 py-4 text-xxs ">{value[column]}</td>
+                    <td key={key+'_'+column}className="px-6 py-4 text-xxs ">{value[column]}</td>
                   ))}
                 </tr>
               ))}

@@ -5,15 +5,18 @@ import Hero from "../components/Heading";
 import Content from "../components/Content";
 import Refresh from "../components/Refresh";
 import DigitalClock from '../components/DigitalClock';
+import { getDataFromEndpoint } from "@/components/src/helpers";
 
 const inter = Inter({ subsets: ["latin"] });
 
-async function getDataFromEndpoint(endpoint) {
-  const data = await fetch(endpoint)
-  .then(response => response.json())
-  return data;
-}
-export async function getStaticProps(){
+
+// export async function getStaticProps(){
+//   const data = await getDataFromEndpoint('https://jsonplaceholder.typicode.com/users');
+//   return {
+//     props: {data}
+//   }
+// }
+export async function getServerSideProps(){
   const data = await getDataFromEndpoint('https://jsonplaceholder.typicode.com/users');
   return {
     props: {data}

@@ -11,3 +11,9 @@ export function dumpKeys(dict) {
 
   return ret;
 }
+
+export async function getDataFromEndpoint(endpoint) {
+  const data = await fetch(endpoint)
+  .then(response => response.json())
+  return data;
+}
