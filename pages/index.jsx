@@ -6,7 +6,7 @@ import Content from "../components/Content";
 import Refresh from "../components/Refresh";
 import DigitalClock from '../components/DigitalClock';
 import { getDataFromEndpoint } from "@/components/src/helpers";
-
+import React, {useState} from 'react';
 const inter = Inter({ subsets: ["latin"] });
 
 
@@ -24,6 +24,8 @@ export async function getServerSideProps(){
 }
 
 export default function Home({data}) {
+  const [childData, setChildData] = useState(data);
+
   return (
     <>
       <Head>
@@ -35,18 +37,16 @@ export default function Home({data}) {
       <main className="custom-bg">
         <div className="grid grid-cols-2 text-white text-xs">
           <div className="col-span-1 mt-2">
-            <Refresh/>
+            <Refresh childData={setChildData}/>
           </div>
           <div className="col-span-1 mt-2 justify-self-end mr-8">
             <DigitalClock />
           </div>
           <div className='col-span-2 mt-2'>
-            <Content content={data}/>
+            <Content content={childData}/>
           </div>
 
         </div>
-
-        {/* <Hero heading='MDAT Admin Console' message='Enter password: '></Hero> */}
       </main>
     </>
   );
