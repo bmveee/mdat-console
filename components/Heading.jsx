@@ -1,6 +1,7 @@
 import React from "react";
 import Authorize from "./Authorize";
-
+//import Navbar from "./Navbar";
+import DigitalClock from "./DigitalClock";
 const Heading = ({ heading, message, buttonText }) => {
   return (
     // <div className='flex items-center justify-center h-screen mb-12 bg-fixed bg-center bg-cover custom-img'>
@@ -15,7 +16,15 @@ const Heading = ({ heading, message, buttonText }) => {
         <Authorize message={message} />
       </div>
 
-      <div className="ml-3 max-h-1 border shadow-sm shadow-slate-400 col-span-4 mt-[-0.5rem] mr-5 "></div>
+      {/* <div className="flex flex-1  mt-2 justify-self-end mr-8">
+        <DigitalClock />
+      </div> */}
+      {/* toy navbar
+      <div className="col-span-4">
+        <Navbar/>
+      </div> */}
+
+      {/* <div className="ml-3 max-h-1 border shadow-sm shadow-slate-400 col-span-4 mt-[-0.5rem] mr-5 "></div> */}
 
       {/* <div className="bg-purple-500 border row-span-2 col-span-2 mt-[-12.0rem] z-[2]">Table data</div>
       <div className="bg-slate-500 border row-span-2 col-span-2 mt-[-12rem]">Graph Data</div> */}

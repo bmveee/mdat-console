@@ -11,6 +11,7 @@ const nextConfig = {
       },
     ],
   },
+  //darkMode: 'class',
 }
 
 module.exports = nextConfig

@@ -13,12 +13,16 @@ html {
   /* background: rgb(2,0,36); */
   /* background: linear-gradient(135deg, rgba(2,0,36,1) 0%, rgba(153,98,180,1) 0%, rgba(0,212,255,1) 100%); */
   background: linear-gradient(360deg, rgba(2, 0, 36, 1) 0%, rgba(11, 1, 15, 1) 0%, rgba(1, 93, 112, 1) 100%);
+  background: rgb(2, 0, 36);
+  background: linear-gradient(270deg, rgba(2, 0, 36, 1) 0%, rgba(78, 109, 115, 1) 71%, rgba(84, 86, 105, 1) 100%);
+
 }
 
 body {
   margin: 0;
   padding: 0;
-  background: linear-gradient(360deg, rgba(2, 0, 36, 1) 0%, rgba(11, 1, 15, 1) 0%, rgba(1, 93, 112, 1) 100%);
+  /* background: linear-gradient(360deg, rgba(2, 0, 36, 1) 0%, rgba(11, 1, 15, 1) 0%, rgba(1, 93, 112, 1) 100%); */
+  background: linear-gradient(270deg, rgba(2, 0, 36, 1) 0%, rgba(78, 109, 115, 1) 71%, rgba(84, 86, 105, 1) 100%);
 }
 
 #authorizeBtn {
@@ -26,3 +30,4 @@ body {
   /* position: relative;
   top: 10px; */
 }
+

@@ -1,14 +1,11 @@
 import Head from "next/head";
 import Image from "next/image";
-import { Inter } from "@next/font/google";
 import Hero from "../components/Heading";
 import Content from "../components/Content";
 import Refresh from "../components/Refresh";
-import DigitalClock from '../components/DigitalClock';
+import DigitalClock from "../components/DigitalClock";
 import { getDataFromEndpoint } from "@/components/src/helpers";
-import React, {useState} from 'react';
-const inter = Inter({ subsets: ["latin"] });
-
+import React, { useState } from "react";
 
 // export async function getStaticProps(){
 //   const data = await getDataFromEndpoint('https://jsonplaceholder.typicode.com/users');
@@ -16,14 +13,16 @@ const inter = Inter({ subsets: ["latin"] });
 //     props: {data}
 //   }
 // }
-export async function getServerSideProps(){
-  const data = await getDataFromEndpoint('https://jsonplaceholder.typicode.com/users');
+export async function getServerSideProps() {
+  const data = await getDataFromEndpoint(
+    "https://jsonplaceholder.typicode.com/users"
+  );
   return {
-    props: {data}
-  }
+    props: { data },
+  };
 }
 
-export default function Home({data}) {
+export default function Home({ data }) {
   const [childData, setChildData] = useState(data);
 
   return (
@@ -35,17 +34,19 @@ export default function Home({data}) {
         <link rel="icon" href="/favicon.ico" />
       </Head>
       <main className="custom-bg">
-        <div className="grid grid-cols-2 text-white text-xs">
-          <div className="col-span-1 mt-2">
-            <Refresh childData={setChildData}/>
-          </div>
-          <div className="col-span-1 mt-2 justify-self-end mr-8">
-            <DigitalClock />
-          </div>
-          <div className='col-span-2 mt-2'>
-            <Content content={childData}/>
-          </div>
+        <div className="mt-2 justify-self-center mr-2">
 
+          <div className="grid grid-cols-2 text-white text-xs">
+            <div className="col-span-1 mt-2">
+              <Refresh childData={setChildData} />
+            </div>
+            <div className="col-span-1 mt-2 justify-self-end mr-8">
+              <DigitalClock />
+            </div>
+            <div className="col-span-2 mt-2">
+              <Content content={childData} />
+            </div>
+          </div>
         </div>
       </main>
     </>
